@@ -1,13 +1,13 @@
 package auth
 
 import (
-    "testing"
 	"net/http"
+	"testing"
 )
 
 func TestGetAPIKeyNoAuth(t *testing.T) {
 	headers := http.Header{}
-    headers.Set("Content-Type", "application/json")
+	headers.Set("Content-Type", "application/json")
 
 	// No Auth
 	res, err := GetAPIKey(headers)
@@ -26,7 +26,7 @@ func TestGetAPIKeyNoAuth(t *testing.T) {
 
 func TestGetApiKeyValid(t *testing.T) {
 	headers := http.Header{}
-    headers.Set("Content-Type", "application/json")
+	headers.Set("Content-Type", "application/json")
 	headers.Set("Authorization", "ApiKey 123")
 
 	res, err := GetAPIKey(headers)
